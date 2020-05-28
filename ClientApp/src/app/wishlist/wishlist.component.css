@@ -1,0 +1,17 @@
+h3 {
+  color: #617B5C;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.delete, .add {
+  float: right;
+  background-color: #617B5C;
+  border-style: none;
+  width: 16%;
+}
+
+.card-body {
+  width: 900px;
+  height: 100px;
+  margin: 0;
+}

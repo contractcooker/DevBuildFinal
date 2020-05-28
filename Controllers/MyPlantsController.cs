@@ -17,7 +17,7 @@ namespace PlantFinderDevBuildFinal.Controllers
 
         public MyPlantsController(IConfiguration config)
         {
-            dal = new DAL(config.GetConnectionString("DefaultConnection"));
+            dal = new DAL(config.GetConnectionString("default"));
         }
 
         [HttpGet("{id}")]
@@ -54,10 +54,29 @@ namespace PlantFinderDevBuildFinal.Controllers
         }
 
         [HttpDelete("{id}")]
-        public int DeleteFromMyPlants (int id)
+        public int DeleteFromMyPlants(int id)
         {
             int result = dal.DeleteFromMyPlants(id);
             return result;
         }
+
+        [HttpPut]
+        public Object Put(JoinedPlant item)
+        {
+            //if (item.WaterCompleted == true)
+            //{
+            //    return Delete(item.ID);
+            //}
+
+            int result = dal.UpdateMyPlants(item);
+
+            //TODO: Return success or error code
+            return new
+            {
+                result = result,
+                success = result == 1 ? true : false
+            };
+        }
     }
 }
+

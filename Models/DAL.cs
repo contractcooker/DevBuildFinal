@@ -87,7 +87,7 @@ namespace PlantFinderDevBuildFinal.Models
         public int DeleteWishlistByID(int id)
         {
             string deleteString = "EXEC DeleteWishlistByID @id";
-            return conn.Execute(deleteString, new { id = id});
+            return conn.Execute(deleteString, new { id = id });
         }
 
         public int AddToMyPlants(MyPlants m)
@@ -120,6 +120,20 @@ namespace PlantFinderDevBuildFinal.Models
         {
             string deleteString = "EXEC DeleteFromMyPlants @id";
             return conn.Execute(deleteString, new { id = id });
+        }
+
+        public int UpdateMyPlants(JoinedPlant plant)
+        {
+            string command = "UPDATE My_Plants ";
+            command += "SET Water_Completed='1' ";
+            command += "WHERE PlantID=@ID AND UserID=@UserID";
+
+            int result = conn.Execute(command, plant);
+
+
+
+
+            return result;
         }
 
 

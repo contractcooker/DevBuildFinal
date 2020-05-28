@@ -1,1 +1,14 @@
-<p>my-plants works!</p>
+<h1 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Water Tracker</h1>
+<div class="containter">
+    <div *ngFor="let p of myPlants; let i = index">
+        <button (click)="update(p)"><img src="https://vignette.wikia.nocookie.net/play-rust/images/7/7f/Water_icon.png/revision/latest/top-crop/width/360/height/360?cb=20151106061403" width="40px"></button>
+        <h3 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">{{p.title}} </h3>
+        <button class="delete" (click)="delete(p.id)">Delete Plant</button><br />
+
+        <hr style="width:90%;text-align:left;margin-left:50px;">
+    </div>
+    <h4 style="text-align: center; color: #617B5C;">
+        {{ remaining() }} plants left to water! <br />
+        {{ doneWatering() }}
+    </h4>
+</div>

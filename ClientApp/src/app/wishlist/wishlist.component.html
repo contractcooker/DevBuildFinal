@@ -1,1 +1,39 @@
-<p>wishlist works!</p>
+
+<h1 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Wishlist</h1>
+<div style="margin-bottom:100px" class="myaccordion" id="accordionExample">
+    <div class="card" *ngFor="let w of wishlist; let i = index">
+        <div class="card-header" [id]="'heading'+i">
+            <h2 class="mb-0">
+
+                <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
+                    <h3>{{w.title}}</h3>
+                </button>
+            </h2>
+        </div>
+        <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
+            <div class="card-body">
+
+                {{w.description}}
+            </div>
+            <button (click)="delete(w.id)" class="delete">Remove From Wishlist</button>
+            <br />
+            <br />
+            <button (click)="addToMyPlants(w.id)" class="add">Add To My Plants</button>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+<!--<div *ngIf="wishlist.length===0"
+      style="background-color: white;
+        max-width: 400px;
+        margin: 125px auto;
+        border-radius: 10px;
+        border: 5px;
+        border-color: navy;
+        border-style: solid;
+        font-family: 'Arial';
+        ">
+  <h2 style="text-align: center; padding: 1px; color: black; border-radius: 30px;">Your wishlist is empty!</h2>
+</div>-->

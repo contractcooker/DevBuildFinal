@@ -1,6 +1,6 @@
 <div>
-    <!--<img src=" {{plant.image}}" />-->
-    {{plant.description}}
+    <p style="float: left;"><img src="{{ plant.image }}" /></p>
+    <p> {{plant.description}}</p>
 </div>
 <button (click)="addToWishlist(plant.id)">Add To Wishlist</button>
 <br />
@@ -8,3 +8,4 @@
 <button (click)="addToMyPlants(plant.id)">Add To My Plants</button>
 <br />
 <br />
+

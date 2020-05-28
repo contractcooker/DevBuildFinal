@@ -7,9 +7,16 @@ button {
 
 div {
   width: 900px;
-  height: 100px;
+  height: 200px;
   margin: 0;
   position: absolute;
   text-align: left;
   word-wrap: break-word;
+}
+
+img {
+  height: 105px;
+  width: 105px;
+  display: inline-block;
+  padding-right: 10px;
 }

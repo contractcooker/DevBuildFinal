@@ -29,7 +29,7 @@ export class MyplantService {
     console.log("The plant ID being passed into the wish object is " + plantID);
     let myPlant: MyPlants = {
 
-
+      ID: null,
       userID: this.userID,
       plantID: plantID,
       waterCompleted: false,
@@ -47,8 +47,8 @@ export class MyplantService {
   }
 
   //added patch
-  //patchWaterCompleted(opost: patchWater): Observable<any> {
-  //  return this.http.patch("https://localhost:44397/my-plants/", opost)
-  //}
-
+  patchWaterCompleted(item: JoinedPlant) {
+    console.log(`Received item to update: PlantID ${item.plantID}. User ID  ${item.userID}. Watered? ${item.waterCompleted}`);
+    return this.http.put('/api/myplants/', item);
+  }
 }

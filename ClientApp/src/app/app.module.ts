@@ -49,7 +49,7 @@ import { TrefleService } from './trefle.service';
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'plant-details', component: PlantDetailsComponent },
       { path: 'my-plants', component: MyPlantsComponent },
-      { path: 'wishlist', component: WishlistComponent },
+      { path: 'wishlist', component: WishlistComponent, canActivate: [AuthorizeGuard] },
       { path: 'add-plant', component: AddPlantComponent },
       { path: 'suggestion-page', component: SuggestionPageComponent },
     ])

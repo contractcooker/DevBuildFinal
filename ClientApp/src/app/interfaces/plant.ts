@@ -6,6 +6,7 @@ export interface Plant {
 }
 
 export interface MyPlants {
+  ID: number;
   plantID: number;
   waterCompleted:boolean;
   userID: number;
