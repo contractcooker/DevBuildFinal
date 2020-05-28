@@ -233,5 +233,4 @@ _Pvt_Extensions
 # gitignore customization
 .DS_Store
 appsettings.json
-appsettings.Development.json
 *.csproj
