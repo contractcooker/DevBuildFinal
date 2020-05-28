@@ -12,6 +12,12 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
+import { AddPlantComponent } from './add-plant/add-plant.component';
+import { MyPlantsComponent } from './my-plants/my-plants.component';
+import { PlantDetailsComponent } from './plant-details/plant-details.component';
+import { PlantsComponent } from './plants/plants.component';
+import { SuggestionPageComponent } from './suggestion-page/suggestion-page.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    AddPlantComponent,
+    MyPlantsComponent,
+    PlantDetailsComponent,
+    PlantsComponent,
+    SuggestionPageComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
