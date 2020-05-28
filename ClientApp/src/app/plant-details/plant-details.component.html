@@ -1,1 +1,10 @@
-<p>plant-details works!</p>
+<div>
+    <!--<img src=" {{plant.image}}" />-->
+    {{plant.description}}
+</div>
+<button (click)="addToWishlist(plant.id)">Add To Wishlist</button>
+<br />
+<br />
+<button (click)="addToMyPlants(plant.id)">Add To My Plants</button>
+<br />
+<br />

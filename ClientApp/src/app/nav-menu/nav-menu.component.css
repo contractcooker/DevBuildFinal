@@ -2,11 +2,21 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: white;
+  font-size: 35px;
 }
+
+nav {
+  background-color: #617B5C;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 20px;
+}
+
 
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;

@@ -1,0 +1,40 @@
+h3 {
+  color: #617B5C;
+  font-family: 'Nanum Gothic', sans-serif;
+  align-items: center;
+  display: inline-block;
+  margin: auto;
+  font-size: 22px;
+}
+
+button {
+  border-style: none;
+  background-color: white;
+  display: inline-block;
+}
+
+img {
+  background-color: white;
+}
+
+
+.containter {
+  border: solid;
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  width: 500px;
+  margin: auto;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.delete {
+  width: 100px;
+  color: white;
+  background-color: darkred;
+  display: inline-block;
+  float: right;
+  margin-top: 60px;
+  margin-right: 20px;
+}

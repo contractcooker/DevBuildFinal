@@ -17,7 +17,7 @@ namespace PlantFinderDevBuildFinal.Controllers
 
         public WishlistController(IConfiguration config)
         {
-            dal = new DAL(config.GetConnectionString("default"));
+            dal = new DAL(config.GetConnectionString("DefaultConnection"));
         }
 
         [HttpGet("{id}")]

@@ -1,0 +1,39 @@
+h3 {
+  color: #617B5C;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+h1 {
+  animation-name: changecolor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  font-size: 70px;
+}
+
+@keyframes changecolor {
+
+
+  0% {
+    color: #617B5C;
+  }
+
+  25% {
+    color: #AB8F72;
+  }
+
+  50% {
+    color: #B5A996;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+
+img {
+  width: 1110px;
+  height: 650px;
+  align-content: center;
+}

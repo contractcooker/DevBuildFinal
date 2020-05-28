@@ -1,1 +1,24 @@
-<p>plants works!</p>
+<img src="https://images.pexels.com/photos/4466764/pexels-photo-4466764.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+<h1 style="text-align: center;padding: 1px; margin-top: 50px; font-family: 'Nanum Gothic', sans-serif;">LIFE IS SHORT BUY THE PLANTS.</h1>
+<div>
+    <br />
+    <!--<img src="assets/logo.png">-->
+    <div style="margin-bottom:200px;" class="myaccordion" id="accordionExample">
+        <div class="card" *ngFor="let p of plant; let i = index">
+            <div class="card-header" [id]="'heading'+i">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
+                        <h3>{{p.title}}</h3>
+                    </button>
+                </h2>
+            </div>
+            <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
+                <div class="card-body">
+                    <app-plant-details [plant]="p"></app-plant-details>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

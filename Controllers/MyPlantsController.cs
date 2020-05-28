@@ -17,7 +17,7 @@ namespace PlantFinderDevBuildFinal.Controllers
 
         public MyPlantsController(IConfiguration config)
         {
-            dal = new DAL(config.GetConnectionString("default"));
+            dal = new DAL(config.GetConnectionString("DefaultConnection"));
         }
 
         [HttpGet("{id}")]

@@ -18,6 +18,11 @@ import { PlantDetailsComponent } from './plant-details/plant-details.component';
 import { PlantsComponent } from './plants/plants.component';
 import { SuggestionPageComponent } from './suggestion-page/suggestion-page.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { PlantService } from './plant.service';
+import { MyplantService } from './myplant.service';
+import { WishlistService } from './wishlist.service';
+import { TrefleService } from './trefle.service';
+
 
 @NgModule({
   declarations: [
@@ -39,9 +44,14 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: PlantsComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'plant-details', component: PlantDetailsComponent },
+      { path: 'my-plants', component: MyPlantsComponent },
+      { path: 'wishlist', component: WishlistComponent },
+      { path: 'add-plant', component: AddPlantComponent },
+      { path: 'suggestion-page', component: SuggestionPageComponent },
     ])
   ],
   providers: [

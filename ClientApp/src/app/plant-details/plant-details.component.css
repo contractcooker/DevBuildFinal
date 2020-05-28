@@ -1,0 +1,15 @@
+button {
+  background-color: #617B5C;
+  border-style: none;
+  float: right;
+  width: 13%;
+}
+
+div {
+  width: 900px;
+  height: 100px;
+  margin: 0;
+  position: absolute;
+  text-align: left;
+  word-wrap: break-word;
+}
