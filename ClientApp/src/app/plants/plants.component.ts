@@ -20,13 +20,14 @@ export class PlantsComponent {
 
   }
   email: string;
+  public isAuthenticated: Observable<boolean>;
 
   plant: Plant[];
 
   ngOnInit() {
     this.get();
-    //this.isAuthenticated = this.authorizeService.isAuthenticated();
-    //this.authorizeService.getUser().subscribe(user => this.email = user.name);
+    this.isAuthenticated = this.authorizeService.isAuthenticated();
+    this.authorizeService.getUser().subscribe(user => this.email = user.name);
     console.log("email: " + this.email);
   }
 

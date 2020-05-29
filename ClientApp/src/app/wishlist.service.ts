@@ -7,15 +7,15 @@ import { Wishlist, JoinedPlant } from './interfaces/plant';
   providedIn: 'root'
 })
 export class WishlistService {
-  userID: number;
+  
   plantID: number;
 
   constructor(private http: HttpClient) {
-    this.userID = 4;
+    
   }
 
-  getWishlist() {
-    return this.http.get<JoinedPlant[]>('/api/wishlist/' + 4);
+  getWishlist(email: string) {
+    return this.http.get<JoinedPlant[]>('/api/wishlist/' + email);
   }
 
   deleteWishlist(wishID: number) {
@@ -28,11 +28,11 @@ export class WishlistService {
     let wish: Wishlist = {
 
       wishID: 0,
-      userID: this.userID,
+      userID: email,
       plantID: plantID
 
     };
-    console.log("The 'wish.userID' is " + wish.userID);
+    console.log("The 'wish.userID' is " + email);
     console.log("The 'wish.plantID' is " + wish.plantID);
     return this.http.post<Wishlist>('/api/wishlist', wish);
   }

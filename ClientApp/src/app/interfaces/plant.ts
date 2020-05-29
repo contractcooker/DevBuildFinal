@@ -25,7 +25,7 @@ export interface JoinedPlant {
 export interface Wishlist {
   
   wishID: number;
-  userID: number;
+  userID: string;
   plantID: number;
 }
 

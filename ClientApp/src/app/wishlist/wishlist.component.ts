@@ -4,6 +4,11 @@ import { TrefleService } from '../trefle.service';
 import { JoinedPlant, Plant, Wishlist } from '../interfaces/plant';
 import { PlantService } from '../plant.service';
 import { MyplantService } from '../myplant.service';
+import { AuthorizeService } from '../../api-authorization/authorize.service';
+import { UserDataService } from '../user-data.service';
+import { Users } from '../interfaces/plant';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-wishlist',
@@ -13,12 +18,16 @@ import { MyplantService } from '../myplant.service';
 /** wishlist component*/
 export class WishlistComponent {
   /** wishlist ctor */
-  constructor(private wishlistData: WishlistService, private plantData: PlantService, private myplantData: MyplantService) { }
+  constructor(private authorizeService: AuthorizeService, private userData: UserDataService, private wishlistData: WishlistService, private plantData: PlantService, private myplantData: MyplantService) { }
 
   wishlist: JoinedPlant[];
-
+  public isAuthenticated: Observable<boolean>;
+  email: string;
   ngOnInit() {
-    this.get();
+    
+    this.isAuthenticated = this.authorizeService.isAuthenticated();
+    this.authorizeService.getUser().subscribe(user => this.email = user.name);
+    this.get(this.email);
   }
 
   delete(id: number) {
@@ -26,7 +35,7 @@ export class WishlistComponent {
     this.wishlistData.deleteWishlist(id).subscribe(
       (data: any) => {
         console.log('DELETE WISHLIST DATA' + data);
-        this.get();
+        this.get(this.email);
       },
       //error => console.error(error)
     );
@@ -39,8 +48,9 @@ export class WishlistComponent {
     );
   }
 
-  get() {
-    this.wishlistData.getWishlist().subscribe(
+  get(email: string) {
+    console.log("wish get email: " + email)
+    this.wishlistData.getWishlist(email).subscribe(
       (data: JoinedPlant[]) => {
         this.wishlist = data;
       },

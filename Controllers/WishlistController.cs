@@ -21,7 +21,7 @@ namespace PlantFinderDevBuildFinal.Controllers
         }
 
         [HttpGet("{id}")]
-        public IEnumerable<JoinedPlant> GetWishlist(int id)
+        public IEnumerable<JoinedPlant> GetWishlist(string id)
         {
             IEnumerable<JoinedPlant> result = dal.GetWishlist(id);
             return result;

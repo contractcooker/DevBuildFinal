@@ -57,7 +57,7 @@ namespace PlantFinderDevBuildFinal.Models
             return result;
         }
 
-        public IEnumerable<JoinedPlant> GetWishlist(int id)
+        public IEnumerable<JoinedPlant> GetWishlist(string id)
         {
             //string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
             //command += "FROM Wish_List w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";

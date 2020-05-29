@@ -10,7 +10,7 @@ namespace PlantFinderDevBuildFinal.Models
     {
         public int wishID { get; set; }
         public int ID { get; set; }
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public int PlantID { get; set; }
     }
 }
