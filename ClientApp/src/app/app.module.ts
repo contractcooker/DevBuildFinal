@@ -22,6 +22,7 @@ import { PlantService } from './plant.service';
 import { MyplantService } from './myplant.service';
 import { WishlistService } from './wishlist.service';
 import { TrefleService } from './trefle.service';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TrefleService } from './trefle.service';
     PlantDetailsComponent,
     PlantsComponent,
     SuggestionPageComponent,
-    WishlistComponent
+    WishlistComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,10 +46,11 @@ import { TrefleService } from './trefle.service';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: PlantsComponent },
+      { path: '', component: HomeComponent },
+      { path: 'plants', component: PlantsComponent, canActivate: [AuthorizeGuard]  },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'plant-details', component: PlantDetailsComponent },
+      { path: 'plant-details', component: PlantDetailsComponent, canActivate: [AuthorizeGuard]  },
       { path: 'my-plants', component: MyPlantsComponent, canActivate: [AuthorizeGuard] },
       { path: 'wishlist', component: WishlistComponent, canActivate: [AuthorizeGuard] },
       { path: 'add-plant', component: AddPlantComponent },

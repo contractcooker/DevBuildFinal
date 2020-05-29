@@ -2,10 +2,10 @@
     <p style="float: left;"><img src="{{ plant.image }}" /></p>
     <p> {{plant.description}}</p>
 </div>
-<button (click)="addToWishlist(plant.id)">Add To Wishlist</button>
+<button (click)="addToWishlist(plant.id, email)">Add To Wishlist</button>
 <br />
 <br />
-<button (click)="addToMyPlants(plant.id)">Add To My Plants</button>
+<button (click)="addToMyPlants(plant.id, email)">Add To My Plants</button>
 <br />
 <br />
 

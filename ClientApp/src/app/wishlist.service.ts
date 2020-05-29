@@ -23,7 +23,7 @@ export class WishlistService {
     return this.http.delete('/api/wishlist/' + wishID);
   }
 
-  postWishlist(plantID: number) {
+  postWishlist(plantID: number, email: string) {
     console.log("The plant ID being passed into the wish object is " + plantID);
     let wish: Wishlist = {
 
